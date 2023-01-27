@@ -1,0 +1,300 @@
+.current-weather {
+  max-width: 784px;
+  max-height: 384px;
+  padding: 20px;
+  background: #448aff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  &__main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  &__description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 119%;
+    letter-spacing: 0.15px;
+    color: #ffffff;
+  }
+}
+
+.location {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  &__city {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+    color: #ffffff;
+  }
+  &__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.18px;
+    color: #ffffff;
+  }
+  &__city-local-time {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color: #fff;
+    opacity: 0.7;
+  }
+}
+
+.today-temperature {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 45px;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.3019607843);
+    right: 0;
+    transform: translateY(50%);
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: auto 0;
+  }
+
+  &__temp {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 100%;
+    color: #ffffff;
+  }
+
+  &__icon {
+    max-width: 100px;
+  }
+  &__feels-like-wrapper {
+    display: flex;
+  }
+  &__feels-like {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    color: #fff;
+    &::before {
+      content: 'Відчувається як';
+      opacity: 0.7;
+      margin-right: 5px;
+    }
+    &::after {
+      content: '°C';
+      opacity: 0.7;
+      margin-left: 5px;
+    }
+  }
+  &__feels-like-span {
+    font-family: 'Roboto';
+    font-style: normal;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-left: 12px;
+    padding: 1px 8px;
+    align-items: center;
+    text-align: center;
+    background: #1fc6c6;
+  }
+}
+.today-hourly-weather {
+  display: flex;
+  gap: 10px;
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 10px;
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: 0.25px;
+
+    color: #ffffff;
+  }
+
+  &__ico {
+    max-width: 45px;
+    max-height: 37px;
+  }
+
+  &__temp {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 114%;
+    letter-spacing: 0.1px;
+
+    color: #ffffff;
+  }
+
+  &__feel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.today-atmosphere {
+  display: flex;
+  background: #00000014;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 20px 0;
+  &__card-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 75px;
+    width: fit-content;
+    gap: 6px;
+    padding-left: 15px;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 90%;
+      left: 0;
+      background-color: #ffffff4d;
+    }
+    &:nth-child(1) {
+      padding-left: 0;
+      &::before {
+        content: unset;
+      }
+    }
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: 0.25px;
+
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__value {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      left: 0;
+      font-size: 70%;
+      width: 16px;
+      height: 16px;
+      filter: invert(1);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.7;
+      margin-right: 5px;
+    }
+    &::after {
+      content: '';
+      font-size: 60%;
+      font-weight: 300;
+      margin-left: 5px;
+    }
+  }
+}
+
+.probability {
+  &::before {
+    background-image: url(./ico/drops.svg);
+  }
+  &::after {
+    content: '%';
+  }
+}
+.wind {
+  &::before {
+    background-image: url(./ico/wind.svg);
+  }
+  &::after {
+    content: 'м/c';
+  }
+}
+.pressure {
+  &::before {
+    background-image: url(./ico/thermometer-5.svg);
+  }
+}
+.uv-index {
+  &::before {
+    content: 'UV';
+    height: fit-content;
+    filter: invert(0);
+    font-weight: 400;
+  }
+}
+.humidity {
+  &::before {
+    background-image: url(./ico/drop-percentage.svg);
+  }
+  &::after {
+    content: '%';
+  }
+}
+.precipitation {
+  &::before {
+    background-image: url(./ico/drizzle.svg);
+  }
+  &::after {
+    content: 'мм';
+  }
+}
