@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-weather-app/static/css/main.e7f365d2.css",
-    "main.js": "/react-weather-app/static/js/main.255e32e7.js",
+    "main.css": "/react-weather-app/static/css/main.a41eb9b7.css",
+    "main.js": "/react-weather-app/static/js/main.0dfbd14e.js",
     "static/media/WeatherIcon-2-39.svg": "/react-weather-app/static/media/WeatherIcon-2-39.e384da6ef67ffa54c496b03829169d4e.svg",
-    "static/media/drizzle.svg": "/react-weather-app/static/media/drizzle.819c4abaa3df4e2d2040.svg",
     "static/media/weatherIcon-2-25.svg": "/react-weather-app/static/media/weatherIcon-2-25.ba3e71d137cd6c92e1945ae6c6afcfd7.svg",
-    "static/media/drops.svg": "/react-weather-app/static/media/drops.169c52af7eb5c6cd3704.svg",
     "static/media/drop-percentage.svg": "/react-weather-app/static/media/drop-percentage.af7bbf15c88abf17b196.svg",
+    "static/media/fog-1.svg": "/react-weather-app/static/media/fog-1.90a2ef048b4cc8e781c2.svg",
     "static/media/wind.svg": "/react-weather-app/static/media/wind.be37674519b69b44916c.svg",
+    "static/media/cloud-up.svg": "/react-weather-app/static/media/cloud-up.a8a3e537449f48acbb9e.svg",
     "static/media/thermometer-5.svg": "/react-weather-app/static/media/thermometer-5.dbdac0a86785f3227146.svg",
     "index.html": "/react-weather-app/index.html",
-    "main.e7f365d2.css.map": "/react-weather-app/static/css/main.e7f365d2.css.map",
-    "main.255e32e7.js.map": "/react-weather-app/static/js/main.255e32e7.js.map"
+    "main.a41eb9b7.css.map": "/react-weather-app/static/css/main.a41eb9b7.css.map",
+    "main.0dfbd14e.js.map": "/react-weather-app/static/js/main.0dfbd14e.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7f365d2.css",
-    "static/js/main.255e32e7.js"
+    "static/css/main.a41eb9b7.css",
+    "static/js/main.0dfbd14e.js"
   ]
 }
