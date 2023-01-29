@@ -1,0 +1,70 @@
+.today-temperature {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  padding-right: 45px;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.3019607843);
+    right: 0;
+    transform: translateY(50%);
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: auto 0;
+  }
+
+  &__temp {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 100%;
+    color: #ffffff;
+  }
+
+  &__icon {
+    max-width: 100px;
+  }
+  &__feels-like-wrapper {
+    display: flex;
+  }
+  &__feels-like {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    color: #fff;
+    &::before {
+      content: 'Feels Like';
+      opacity: 0.7;
+      margin-right: 5px;
+    }
+    &::after {
+      content: '°C';
+      opacity: 0.7;
+      margin-left: 5px;
+    }
+  }
+  &__feels-like-span {
+    font-family: 'Roboto';
+    font-style: normal;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-left: 12px;
+    padding: 1px 8px;
+    align-items: center;
+    text-align: center;
+    background: #1fc6c6;
+  }
+}

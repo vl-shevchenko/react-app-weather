@@ -1,0 +1,50 @@
+.today-hourly-weather {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+  justify-content: space-evenly;
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 10px;
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: 0.25px;
+
+    color: #ffffff;
+  }
+
+  &__ico {
+    max-width: 45px;
+    max-height: 37px;
+  }
+
+  &__temp {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 114%;
+    letter-spacing: 0.1px;
+
+    color: #ffffff;
+  }
+
+  &__feel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
