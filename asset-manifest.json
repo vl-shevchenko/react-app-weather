@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-weather-app/static/css/main.62ff11aa.css",
-    "main.js": "/react-weather-app/static/js/main.a8ebae99.js",
+    "main.js": "/react-weather-app/static/js/main.6bd6ab7c.js",
     "static/media/WeatherIcon-2-39.svg": "/react-weather-app/static/media/WeatherIcon-2-39.e384da6ef67ffa54c496b03829169d4e.svg",
     "static/media/weatherIcon-2-25.svg": "/react-weather-app/static/media/weatherIcon-2-25.ba3e71d137cd6c92e1945ae6c6afcfd7.svg",
     "static/media/drop-percentage.svg": "/react-weather-app/static/media/drop-percentage.af7bbf15c88abf17b196.svg",
@@ -11,10 +11,10 @@
     "static/media/thermometer-5.svg": "/react-weather-app/static/media/thermometer-5.dbdac0a86785f3227146.svg",
     "index.html": "/react-weather-app/index.html",
     "main.62ff11aa.css.map": "/react-weather-app/static/css/main.62ff11aa.css.map",
-    "main.a8ebae99.js.map": "/react-weather-app/static/js/main.a8ebae99.js.map"
+    "main.6bd6ab7c.js.map": "/react-weather-app/static/js/main.6bd6ab7c.js.map"
   },
   "entrypoints": [
     "static/css/main.62ff11aa.css",
-    "static/js/main.a8ebae99.js"
+    "static/js/main.6bd6ab7c.js"
   ]
 }
