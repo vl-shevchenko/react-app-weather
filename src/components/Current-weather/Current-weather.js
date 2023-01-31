@@ -12,7 +12,7 @@ const CurrentWeather = ({ data }) => {
       <LocationTitle data={data[0]} />
       <div className="current-weather__main-container">
         <TodayTemperature data={data[0]} />
-        <TodayHourlyWeather data={data[1]} />
+        <TodayHourlyWeather data={data[2]} />
       </div>
       <p className="current-weather__description">{data[0].weather[0].description}</p>
       <TodayAtmosphere data={data[0]} />

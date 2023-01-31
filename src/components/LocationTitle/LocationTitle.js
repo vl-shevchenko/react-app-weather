@@ -3,12 +3,11 @@ import './locationTitle.scss';
 const LocationTitle = ({ data }) => {
   // console.log(data);
 
-  let date = new Date(data.dt * 1000);
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
+  var myDate = new Date(data.dt * 1000);
 
-  let options = { weekday: 'long', day: 'numeric', month: 'long' };
-  let dateToday = date.toLocaleDateString('en-US', options);
+  let [weekday, day, month, , time] = myDate.toUTCString().split(' ');
+  const dateToday = `${weekday} ${day} ${month}`;
+  const [hours, minutes] = time.split(':');
 
   const [city] = data.city.split(',');
   return (
