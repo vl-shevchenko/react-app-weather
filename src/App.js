@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions } from './api';
-import CurrentWeather from './components/Current-weather/Current-weather';
-import Search from './components/Search/Search';
+import CurrentWeather from './components/current-weather/Current-weather';
+import Search from './components/search/Search';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -10,7 +10,6 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(',');
-    const [cityName] = searchData.label.split(',');
 
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
@@ -40,6 +39,7 @@ function App() {
   return (
     <div>
       <Search onSearchChange={handleOnSearchChange} />
+
       {currentWeather && <CurrentWeather data={[currentWeather, forecast, todayHourly]} />}
     </div>
   );

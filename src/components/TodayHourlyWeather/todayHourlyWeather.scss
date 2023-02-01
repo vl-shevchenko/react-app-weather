@@ -24,8 +24,12 @@
   }
 
   &__ico {
-    max-width: 45px;
-    max-height: 37px;
+    width: 40px;
+    height: 40px;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__temp {

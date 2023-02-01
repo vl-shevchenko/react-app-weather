@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
 import { GEO_API_URL, geoApiOptions } from '../../api';
-import Logo from '../Logo/Logo';
+import Logo from '../logo/Logo';
 import './search.scss';
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
-
+  // let loadOptions = { value: '50.45,30.523611111', label: 'Kyiv, UA' };
   const loadOptions = (inputValue) => {
     return fetch(`${GEO_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`, geoApiOptions)
       .then((response) => response.json())
@@ -29,6 +29,7 @@ const Search = ({ onSearchChange }) => {
     onSearchChange(searcData);
     // console.log(searcData);
   };
+
   return (
     <header className="header">
       <div className="header__wrapper">
