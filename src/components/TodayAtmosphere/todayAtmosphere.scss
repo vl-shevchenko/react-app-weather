@@ -78,7 +78,7 @@
 
 .clouds {
   &::before {
-    background-image: url(./../current-weather/ico/cloud-up.svg);
+    background-image: url(./../../assets/ico/global/ico/cloud-up.svg);
   }
   &::after {
     content: '%';
@@ -86,7 +86,7 @@
 }
 .wind {
   &::before {
-    background-image: url(./../current-weather/ico/wind.svg);
+    background-image: url(./../../assets/ico/global/ico/wind.svg);
   }
   &::after {
     content: 'м/c';
@@ -94,7 +94,7 @@
 }
 .pressure {
   &::before {
-    background-image: url(./../current-weather/ico/thermometer-5.svg);
+    background-image: url(./../../assets/ico/global/ico/thermometer-5.svg);
   }
   &::after {
     content: 'hPa';
@@ -102,7 +102,7 @@
 }
 .visibility {
   &::before {
-    background-image: url(./../current-weather/ico/fog-1.svg);
+    background-image: url(./../../assets/ico/global/ico/fog-1.svg);
   }
   &::after {
     content: 'м';
@@ -110,7 +110,7 @@
 }
 .humidity {
   &::before {
-    background-image: url(./../current-weather/ico/drop-percentage.svg);
+    background-image: url(./../../assets/ico/global/ico/drop-percentage.svg);
   }
   &::after {
     content: '%';

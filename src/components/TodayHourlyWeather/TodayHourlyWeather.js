@@ -3,7 +3,7 @@ import { GlobalSvgSelector } from '../../assets/ico/global/GlobalSvgSelector';
 
 const TodayHourlyWeather = ({ data }) => {
   const hourlyWeather = data.forecast.forecastday[0].hour;
-  console.log(hourlyWeather);
+  // console.log(hourlyWeather);
 
   return (
     <div className="today-hourly-weather">

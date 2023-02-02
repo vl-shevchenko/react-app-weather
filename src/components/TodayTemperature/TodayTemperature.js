@@ -2,7 +2,7 @@ import './todayTemperature.scss';
 import { GlobalSvgSelector } from '../../assets/ico/global/GlobalSvgSelector';
 
 const TodayTemperature = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="today-temperature">
