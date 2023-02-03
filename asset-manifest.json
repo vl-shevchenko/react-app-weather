@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/react-weather-app/static/css/main.62ff11aa.css",
-    "main.js": "/react-weather-app/static/js/main.6bd6ab7c.js",
-    "static/media/WeatherIcon-2-39.svg": "/react-weather-app/static/media/WeatherIcon-2-39.e384da6ef67ffa54c496b03829169d4e.svg",
-    "static/media/weatherIcon-2-25.svg": "/react-weather-app/static/media/weatherIcon-2-25.ba3e71d137cd6c92e1945ae6c6afcfd7.svg",
+    "main.css": "/react-weather-app/static/css/main.44116784.css",
+    "main.js": "/react-weather-app/static/js/main.e3e72656.js",
+    "static/media/sun.png": "/react-weather-app/static/media/sun.52a85685e4962018a2f4.png",
+    "static/media/moon-phase.png": "/react-weather-app/static/media/moon-phase.134dd88b48f717300f61.png",
+    "static/media/sunrise.png": "/react-weather-app/static/media/sunrise.aefab17d522f02211bc4.png",
+    "static/media/sunset.png": "/react-weather-app/static/media/sunset.3bde322478a38a0ce66d.png",
+    "static/media/snowflake.svg": "/react-weather-app/static/media/snowflake.1a4dceab5d39c0841edf.svg",
+    "static/media/drops.svg": "/react-weather-app/static/media/drops.169c52af7eb5c6cd3704.svg",
     "static/media/drop-percentage.svg": "/react-weather-app/static/media/drop-percentage.af7bbf15c88abf17b196.svg",
     "static/media/fog-1.svg": "/react-weather-app/static/media/fog-1.90a2ef048b4cc8e781c2.svg",
     "static/media/wind.svg": "/react-weather-app/static/media/wind.be37674519b69b44916c.svg",
+    "static/media/precipitation.svg": "/react-weather-app/static/media/precipitation.d2eeda7ff51c9faebfe6.svg",
     "static/media/cloud-up.svg": "/react-weather-app/static/media/cloud-up.a8a3e537449f48acbb9e.svg",
     "static/media/thermometer-5.svg": "/react-weather-app/static/media/thermometer-5.dbdac0a86785f3227146.svg",
     "index.html": "/react-weather-app/index.html",
-    "main.62ff11aa.css.map": "/react-weather-app/static/css/main.62ff11aa.css.map",
-    "main.6bd6ab7c.js.map": "/react-weather-app/static/js/main.6bd6ab7c.js.map"
+    "main.44116784.css.map": "/react-weather-app/static/css/main.44116784.css.map",
+    "main.e3e72656.js.map": "/react-weather-app/static/js/main.e3e72656.js.map"
   },
   "entrypoints": [
-    "static/css/main.62ff11aa.css",
-    "static/js/main.6bd6ab7c.js"
+    "static/css/main.44116784.css",
+    "static/js/main.e3e72656.js"
   ]
 }
