@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { useState } from 'react';
 import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions } from './api';
 import NavBar from './components/navBar/NavBar';
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      <HashRouter>
         <ScrollToTop />
         <Search onSearchChange={handleOnSearchChange} />
         <NavBar />
@@ -57,7 +57,7 @@ function App() {
           />
           <Route path="/hourly" element={currentWeather && <Hourly data={[currentWeather, forecast, todayHourly]} />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
