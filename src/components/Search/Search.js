@@ -6,7 +6,8 @@ import './search.scss';
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
-  // let loadOptions = { value: '50.45,30.523611111', label: 'Kyiv, UA' };
+  // search({ value: '50.45,30.523611111', label: 'Kyiv, UA' });
+
   const loadOptions = (inputValue) => {
     return fetch(`${GEO_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`, geoApiOptions)
       .then((response) => response.json())
@@ -24,10 +25,10 @@ const Search = ({ onSearchChange }) => {
       .catch((err) => console.error(err));
   };
 
-  const handleOnChange = (searcData) => {
+  let handleOnChange = (searcData) => {
     setSearch(searcData);
     onSearchChange(searcData);
-    // console.log(searcData);
+    console.log(searcData);
   };
 
   return (

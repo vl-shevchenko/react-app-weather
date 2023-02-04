@@ -1,0 +1,141 @@
+.hourly-weather {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+  justify-content: space-evenly;
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 10px;
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: 0.25px;
+    color: #34515ecc;
+  }
+
+  &__ico {
+    width: 40px;
+    height: 40px;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__temp {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 114%;
+    letter-spacing: 0.1px;
+    color: #263238;
+  }
+  &__value-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  &__value {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.1px;
+    color: #263238;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      left: 0;
+      font-size: 70%;
+      width: 16px;
+      height: 16px;
+      filter: invert(0.8);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-right: 8px;
+    }
+    &::after {
+      content: '';
+      color: #34515ecc;
+      font-size: 90%;
+      font-weight: 300;
+      margin-left: 8px;
+      opacity: 0.8;
+    }
+  }
+}
+.feelslike-c {
+  line-height: unset;
+  &::before {
+    content: 'Feels Like';
+    display: flex;
+    align-items: flex-end;
+    width: 24px;
+  }
+  &::after {
+    content: '°C';
+  }
+}
+.chance-of-rain {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/drops.svg);
+  }
+  &::after {
+    content: '%';
+  }
+}
+.chance-of-snow {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/snowflake.svg);
+  }
+  &::after {
+    content: '%';
+  }
+}
+.precip-mm {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/precipitation.svg);
+  }
+  &::after {
+    content: 'mm';
+  }
+}
+.wind-kph {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/wind.svg);
+  }
+  &::after {
+    content: 'м/c';
+  }
+}
+.windchill-c {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/wind.svg);
+  }
+  &::after {
+    content: '°C';
+  }
+}
+.humidity {
+  &::before {
+    background-image: url(./../../assets/ico/global/ico/drop-percentage.svg);
+  }
+  &::after {
+    content: '%';
+  }
+}

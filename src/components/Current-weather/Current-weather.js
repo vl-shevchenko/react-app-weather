@@ -19,7 +19,6 @@ const CurrentWeather = ({ data }) => {
         <p className="current-weather__description">{data[2].current.condition.text}</p>
         <TodayAtmosphere data={data[0]} />
       </div>
-      <TomorrowWeather data={data[2]} />
     </>
   );
 };
