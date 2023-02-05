@@ -8,7 +8,7 @@ const TomorrowWeather = ({ data }) => {
 
   var myDate = new Date(data.location.localtime_epoch * 1000);
 
-  let [weekday, day, month, , time] = myDate.toUTCString().split(' ');
+  let [weekday, day, month, , ,] = myDate.toUTCString().split(' ');
   const dateToday = `${weekday} ${day} ${month}`;
   // const [hours, minutes] = time.split(':');
 

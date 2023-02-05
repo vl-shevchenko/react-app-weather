@@ -2,8 +2,7 @@ import LocationTitle from '../locationTitle/LocationTitle.js';
 import TodayAtmosphere from '../todayAtmosphere/TodayAtmosphere.js';
 import TodayHourlyWeather from '../todayHourlyWeather/TodayHourlyWeather.js';
 import TodayTemperature from '../todayTemperature/TodayTemperature.js';
-import TomorrowWeather from '../tomorrov/TomorrowWeather.js';
-import './current-weather.scss';
+import './currentWeather.scss';
 
 const CurrentWeather = ({ data }) => {
   // console.log(data);

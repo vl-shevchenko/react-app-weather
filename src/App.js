@@ -1,23 +1,41 @@
 import { Routes, Route, HashRouter } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions } from './api';
 import NavBar from './components/navBar/NavBar';
-// import CurrentWeather from './components/current-weather/Current-weather';
 import Search from './components/search/Search';
 import Today from './pages/Today';
 import Tomorrow from './pages/Tomorrow';
 import Hourly from './pages/Hourly';
 import ScrollToTop from './utils/scrollToTop';
-// import TomorrowWeather from './components/tomorrov/TomorrowWeather';
+import { InfinitySpin } from 'react-loader-spinner';
+import './styles/index.scss';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [todayHourly, setTodayHourly] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      fetch(`${TW_API_URL}?q=${latitude},${longitude}&days=3`, TodayHourlyWeatherOptions)
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .catch((err) => console.error(err));
+    });
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, [setIsLoading]);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(',');
-
+    // setIsLoading(true);
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -36,7 +54,9 @@ function App() {
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forecastResponse });
         setTodayHourly({ city: searchData.label, ...todayHourlyWeatherResponse });
+        // setIsLoading(false);
       })
+
       .catch((err) => console.log(err));
   };
 
@@ -45,19 +65,29 @@ function App() {
 
   return (
     <div>
-      <HashRouter>
-        <ScrollToTop />
-        <Search onSearchChange={handleOnSearchChange} />
-        <NavBar />
-        <Routes>
-          <Route path="/" element={currentWeather && <Today data={[currentWeather, forecast, todayHourly]} />} />
-          <Route
-            path="/tomorrow"
-            element={currentWeather && <Tomorrow data={[currentWeather, forecast, todayHourly]} />}
-          />
-          <Route path="/hourly" element={currentWeather && <Hourly data={[currentWeather, forecast, todayHourly]} />} />
-        </Routes>
-      </HashRouter>
+      {isLoading ? (
+        <div className="spin">
+          <InfinitySpin width="200" color="#448aff" />
+        </div>
+      ) : (
+        <HashRouter>
+          <ScrollToTop />
+          <Search onSearchChange={handleOnSearchChange} />
+          <NavBar />
+
+          <Routes>
+            <Route path="/" element={currentWeather && <Today data={[currentWeather, forecast, todayHourly]} />} />
+            <Route
+              path="/tomorrow"
+              element={currentWeather && <Tomorrow data={[currentWeather, forecast, todayHourly]} />}
+            />
+            <Route
+              path="/hourly"
+              element={currentWeather && <Hourly data={[currentWeather, forecast, todayHourly]} />}
+            />
+          </Routes>
+        </HashRouter>
+      )}
     </div>
   );
 }
