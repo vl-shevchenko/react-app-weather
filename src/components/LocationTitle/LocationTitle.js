@@ -1,7 +1,7 @@
 import './locationTitle.scss';
 
 const LocationTitle = ({ data }) => {
-  // console.log(data);
+  console.log(data);
 
   var myDate = new Date(data.dt * 1000);
 

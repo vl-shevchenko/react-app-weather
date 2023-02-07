@@ -1,6 +1,6 @@
-import TomorrowAstro from '../tomorrowAstro/TomorrowAstro';
-import TomorrowHourlyWeather from '../tomorrowHourlyWeather/TomorrowHourlyWeather';
-import TomorrowTemperatureDay from '../tomorrowTemperatureDay/TomorrowTemperatureDay';
+import TomorrowAstro from '../TomorrowAstro/TomorrowAstro';
+import TomorrowHourlyWeather from '../TomorrowHourlyWeather/TomorrowHourlyWeather';
+import TomorrowTemperatureDay from '../TomorrowTemperatureDay/TomorrowTemperatureDay';
 import './tomorrowWeather.scss';
 
 const TomorrowWeather = ({ data }) => {

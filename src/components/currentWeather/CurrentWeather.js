@@ -1,11 +1,11 @@
-import LocationTitle from '../locationTitle/LocationTitle.js';
-import TodayAtmosphere from '../todayAtmosphere/TodayAtmosphere.js';
-import TodayHourlyWeather from '../todayHourlyWeather/TodayHourlyWeather.js';
-import TodayTemperature from '../todayTemperature/TodayTemperature.js';
+import LocationTitle from '../LocationTitle/LocationTitle.js';
+import TodayAtmosphere from '../TodayAtmosphere/TodayAtmosphere.js';
+import TodayHourlyWeather from '../TodayHourlyWeather/TodayHourlyWeather.js';
+import TodayTemperature from '../TodayTemperature/TodayTemperature.js';
 import './currentWeather.scss';
 
 const CurrentWeather = ({ data }) => {
-  // console.log(data);
+  console.log(data);
 
   return (
     <>

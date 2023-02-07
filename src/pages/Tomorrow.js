@@ -1,4 +1,4 @@
-import TomorrowWeather from '../components/tomorrov/TomorrowWeather';
+import TomorrowWeather from '../components/Tomorrov/TomorrowWeather';
 
 function Tomorrow({ data }) {
   return <TomorrowWeather data={data[2]} />;

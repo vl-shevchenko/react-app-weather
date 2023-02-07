@@ -1,8 +1,8 @@
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions } from './api';
-import NavBar from './components/navBar/NavBar';
-import Search from './components/search/Search';
+import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions, REVERSE_API_URL } from './api';
+import NavBar from './components/NavBar/NavBar';
+import Search from './components/Search/Search';
 import Today from './pages/Today';
 import Tomorrow from './pages/Tomorrow';
 import Hourly from './pages/Hourly';
@@ -15,6 +15,7 @@ function App() {
   const [forecast, setForecast] = useState(null);
   const [todayHourly, setTodayHourly] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [cityGeo, setCityGeo] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,20 +23,35 @@ function App() {
       console.log(position);
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-
-      fetch(`${TW_API_URL}?q=${latitude},${longitude}&days=3`, TodayHourlyWeatherOptions)
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
+      myGeo(latitude, longitude);
     });
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }, [setIsLoading]);
 
-  const handleOnSearchChange = (searchData) => {
-    const [lat, lon] = searchData.value.split(',');
-    // setIsLoading(true);
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 3000);
+  }, []);
+
+  const myGeo = (latitude, longitude) => {
+    fetch(`${REVERSE_API_URL}/reverse?lat=${latitude}&lon=${longitude}&limit=1000&appid=${WEATHER_API_KEY}`)
+      .then((response) => response.json())
+      .then((response) => setCityGeo(response[0].name))
+      .catch((err) => console.error(err));
+    // const [city] = setCityGeo;
+    // console.log(city);
+    getWeather(latitude, longitude, '');
+  };
+
+  // .then(async (response) => {
+  //   const cityResponse = await response.json();
+  //   setCityGeo({ ...cityResponse });
+  // })
+  // .catch((err) => console.log(err));
+
+  // };
+
+  const getWeather = (lat, lon, city) => {
+    setIsLoading(true);
+
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -43,7 +59,7 @@ function App() {
       `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
-    const todayHourlyWeatherFetch = fetch(`${TW_API_URL}?q=${searchData.value}&days=3`, TodayHourlyWeatherOptions);
+    const todayHourlyWeatherFetch = fetch(`${TW_API_URL}?q=${lat},${lon}&days=3`, TodayHourlyWeatherOptions);
 
     Promise.all([currentWeatherFetch, forecastFetch, todayHourlyWeatherFetch])
       .then(async (response) => {
@@ -51,13 +67,18 @@ function App() {
         const forecastResponse = await response[1].json();
         const todayHourlyWeatherResponse = await response[2].json();
 
-        setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forecastResponse });
-        setTodayHourly({ city: searchData.label, ...todayHourlyWeatherResponse });
-        // setIsLoading(false);
+        setCurrentWeather({ city, ...weatherResponse });
+        setForecast({ city, ...forecastResponse });
+        setTodayHourly({ city, ...todayHourlyWeatherResponse });
       })
-
       .catch((err) => console.log(err));
+    setIsLoading(false);
+  };
+
+  const handleOnSearchChange = (searchData) => {
+    const [latitude, longitude] = searchData.value.split(',');
+    const [city] = searchData.label.split(',');
+    getWeather(latitude, longitude, city);
   };
 
   // console.log(currentWeather);

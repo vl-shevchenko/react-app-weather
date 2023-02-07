@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
 import { GEO_API_URL, geoApiOptions } from '../../api';
-import Logo from '../logo/Logo';
+import Logo from '../Logo/Logo';
 import './search.scss';
 
 const Search = ({ onSearchChange }) => {

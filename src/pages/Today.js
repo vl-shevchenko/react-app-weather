@@ -1,4 +1,4 @@
-import CurrentWeather from '../components/currentWeather/CurrentWeather';
+import CurrentWeather from '../components/CurrentWeather/CurrentWeather';
 
 function Today({ data }) {
   return <CurrentWeather data={data} />;
