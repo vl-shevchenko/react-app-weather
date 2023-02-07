@@ -1,6 +1,6 @@
-import TomorrowAstro from '../TomorrowAstro/TomorrowAstro';
-import TomorrowHourlyWeather from '../TomorrowHourlyWeather/TomorrowHourlyWeather';
-import TomorrowTemperatureDay from '../TomorrowTemperatureDay/TomorrowTemperatureDay';
+import TomorrowAstronomy from '../TomorrowAstronomy/TomorrowAstronomy';
+import TomorrowHourly from '../TomorrowHourly/TomorrowHourly';
+import TomorrowTemperature from '../TomorrowTemperature/TomorrowTemperature';
 import './tomorrowWeather.scss';
 
 const TomorrowWeather = ({ data }) => {
@@ -25,13 +25,13 @@ const TomorrowWeather = ({ data }) => {
             <p className="tomorrow-location__city-local-time">
               Tomorrow in {city} {dateToday}
             </p>
-            <TomorrowTemperatureDay data={data} />
+            <TomorrowTemperature data={data} />
 
-            <TomorrowAstro data={data} />
+            <TomorrowAstronomy data={data} />
           </div>
         </div>
 
-        <TomorrowHourlyWeather data={data} />
+        <TomorrowHourly data={data} />
       </div>
     </div>
   );

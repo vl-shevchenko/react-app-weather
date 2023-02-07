@@ -1,7 +1,7 @@
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { WEATHER_API_KEY, WEATHER_API_URL, TW_API_URL, TodayHourlyWeatherOptions, REVERSE_API_URL } from './api';
-import NavBar from './components/NavBar/NavBar';
+import NavBarLink from './components/NavBarLink/NavBarLink';
 import Search from './components/Search/Search';
 import Today from './pages/Today';
 import Tomorrow from './pages/Tomorrow';
@@ -94,7 +94,7 @@ function App() {
         <HashRouter>
           <ScrollToTop />
           <Search onSearchChange={handleOnSearchChange} />
-          <NavBar />
+          <NavBarLink />
 
           <Routes>
             <Route path="/" element={currentWeather && <Today data={[currentWeather, forecast, todayHourly]} />} />

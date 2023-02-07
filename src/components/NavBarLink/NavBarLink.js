@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import './navBar.scss';
+import './navBarLink.scss';
 
 function NavBar() {
   const activeLink = 'navBar__link navBar__link--active';

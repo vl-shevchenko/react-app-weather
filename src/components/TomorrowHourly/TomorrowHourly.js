@@ -1,7 +1,7 @@
 import { GlobalSvgSelector } from '../../assets/ico/global/GlobalSvgSelector';
-import './tomorrowHourlyWeather.scss';
+import './tomorrowHourly.scss';
 
-const TomorrowHourlyWeather = ({ data }) => {
+const TomorrowHourly = ({ data }) => {
   // console.log(data);
   const hourlyWeatherTomorrow = data.forecast.forecastday[1].hour;
 
@@ -75,4 +75,4 @@ const TomorrowHourlyWeather = ({ data }) => {
   );
 };
 
-export default TomorrowHourlyWeather;
+export default TomorrowHourly;

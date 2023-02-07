@@ -1,6 +1,6 @@
-import './tomorrowAstro.scss';
+import './tomorrowAstronomy.scss';
 
-const TomorrowAstro = ({ data }) => {
+const TomorrowAstronomy = ({ data }) => {
   // console.log(data);
 
   return (
@@ -27,4 +27,4 @@ const TomorrowAstro = ({ data }) => {
   );
 };
 
-export default TomorrowAstro;
+export default TomorrowAstronomy;

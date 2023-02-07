@@ -1,7 +1,7 @@
 import { GlobalSvgSelector } from '../../assets/ico/global/GlobalSvgSelector';
-import './tomorrowTemperatureDay.scss';
+import './tomorrowTemperature.scss';
 
-const TomorrowTemperatureDay = ({ data }) => {
+const TomorrowTemperature = ({ data }) => {
   // console.log(data);
 
   return (
@@ -18,4 +18,4 @@ const TomorrowTemperatureDay = ({ data }) => {
   );
 };
 
-export default TomorrowTemperatureDay;
+export default TomorrowTemperature;
