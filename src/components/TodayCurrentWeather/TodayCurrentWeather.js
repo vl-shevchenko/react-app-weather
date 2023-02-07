@@ -2,9 +2,9 @@ import LocationTitle from '../LocationTitle/LocationTitle.js';
 import TodayAtmosphere from '../TodayAtmosphere/TodayAtmosphere.js';
 import TodayHourlyWeather from '../TodayHourlyWeather/TodayHourlyWeather.js';
 import TodayTemperature from '../TodayTemperature/TodayTemperature.js';
-import './currentWeather.scss';
+import './todayCurrentWeather.scss';
 
-const CurrentWeather = ({ data }) => {
+const TodayCurrentWeather = ({ data }) => {
   console.log(data);
 
   return (
@@ -22,4 +22,4 @@ const CurrentWeather = ({ data }) => {
   );
 };
 
-export default CurrentWeather;
+export default TodayCurrentWeather;
