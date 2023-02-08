@@ -9,13 +9,13 @@ import Hourly from './pages/Hourly';
 import ScrollToTop from './utils/scrollToTop';
 import { InfinitySpin } from 'react-loader-spinner';
 import './styles/index.scss';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [todayHourly, setTodayHourly] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [cityGeo, setCityGeo] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,24 +23,26 @@ function App() {
       console.log(position);
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      myGeo(latitude, longitude);
+      fetch(`${REVERSE_API_URL}/reverse?lat=${latitude}&lon=${longitude}&limit=1000&appid=${WEATHER_API_KEY}`)
+        .then((response) => response.json())
+        .then((data) => getCity(data))
+        .catch((err) => console.error(err));
+      // const [city] = setCityGeo;
+      // console.log(setCityGeo);
+      function getCity(data) {
+        const city = data[0].name;
+        const latitude = data[0].lat;
+        const longitude = data[0].lon;
+        getWeather(latitude, longitude, city);
+      }
     });
 
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 3000);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 12000);
   }, []);
 
-  const myGeo = (latitude, longitude) => {
-    fetch(`${REVERSE_API_URL}/reverse?lat=${latitude}&lon=${longitude}&limit=1000&appid=${WEATHER_API_KEY}`)
-      .then((response) => response.json())
-      .then((response) => setCityGeo(response[0].name))
-      .catch((err) => console.error(err));
-    // const [city] = setCityGeo;
-    // console.log(city);
-    getWeather(latitude, longitude, '');
-  };
-
+  // console.log(cityGeo);
   // .then(async (response) => {
   //   const cityResponse = await response.json();
   //   setCityGeo({ ...cityResponse });
@@ -60,6 +62,10 @@ function App() {
     );
 
     const todayHourlyWeatherFetch = fetch(`${TW_API_URL}?q=${lat},${lon}&days=3`, TodayHourlyWeatherOptions);
+
+    // const todayMapPrecipitation = fetch(
+    //   `${MAP_WEATHER_API_URL}/precipitation_new/{2}/${lat}/${lon}.png?appid=${WEATHER_API_KEY}`
+    // );
 
     Promise.all([currentWeatherFetch, forecastFetch, todayHourlyWeatherFetch])
       .then(async (response) => {
@@ -85,7 +91,7 @@ function App() {
   // console.log(forecast);
 
   return (
-    <div>
+    <div className="wrapper">
       {isLoading ? (
         <div className="spin">
           <InfinitySpin width="200" color="#448aff" />
@@ -95,18 +101,20 @@ function App() {
           <ScrollToTop />
           <Search onSearchChange={handleOnSearchChange} />
           <NavBarLink />
-
-          <Routes>
-            <Route path="/" element={currentWeather && <Today data={[currentWeather, forecast, todayHourly]} />} />
-            <Route
-              path="/tomorrow"
-              element={currentWeather && <Tomorrow data={[currentWeather, forecast, todayHourly]} />}
-            />
-            <Route
-              path="/hourly"
-              element={currentWeather && <Hourly data={[currentWeather, forecast, todayHourly]} />}
-            />
-          </Routes>
+          <main className="main">
+            <Routes>
+              <Route path="/" element={currentWeather && <Today data={[currentWeather, forecast, todayHourly]} />} />
+              <Route
+                path="/tomorrow"
+                element={currentWeather && <Tomorrow data={[currentWeather, forecast, todayHourly]} />}
+              />
+              <Route
+                path="/hourly"
+                element={currentWeather && <Hourly data={[currentWeather, forecast, todayHourly]} />}
+              />
+            </Routes>
+          </main>
+          <Footer />
         </HashRouter>
       )}
     </div>

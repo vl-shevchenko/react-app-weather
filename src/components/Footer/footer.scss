@@ -1,0 +1,23 @@
+.footer {
+  background: #ffffff;
+
+  &__wrapper {
+  }
+  &__wrapper-section {
+    border-bottom: 1px solid rgba(96, 125, 139, 0.12);
+  }
+  &__section {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 100px;
+  }
+  &__text {
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: #607d8b;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+  }
+}
